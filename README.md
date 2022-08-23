@@ -27,4 +27,51 @@ This project explores Redux and its  ecosystems(<em>Redux-thunks</em>, <em>Redux
 <img src="/images/image2.png" alt="" width="700">
 <img src="/images/image3.png" alt="" width="700">
 
+<hr/>
+
+<h3>MySQL Query to create a task</h3>
+
+```
+let SQL = `INSERT INTO tasks (id, text, isCompleted,createdAt)
+         VALUES ('${insertedTask.id}','${insertedTask.text}',${insertedTask.isCompleted},${insertedTask.createdAt});
+        `;
+        db.query(SQL, function (err, result) {
+            if (err) throw err;
+            res.status(200).json(result); 
+          });
+        } else {
+            res.status(400).json({ message: 'Request body should have a text property' });
+        };
+```
+
+<h3>Query to get all tasks</h3>
+
+```
+let SQL = `SELECT * FROM tasks`;
+            db.query(SQL, function (err, result) {
+             if (err) res.send(err);
+             res.status(200).json(result);   
+      });
+```
+<h3>Query to update a task by marking it as complete</h3>
+
+```
+ const { id } = req.params;
+    const sql = `UPDATE tasks SET isCompleted= true,dateCompleted=now() WHERE id =${id}`;
+    db.query(sql, function (err, result) {
+      if (err) throw err;
+      res.status(200).json(result);
+    });
+```
+
+<h3>Query to delete task</h3>
+
+```
+const { id } = req.params;
+        const SQL = `DELETE FROM tasks WHERE id =${id}`;
+         db.query(SQL, function (err, result) {
+            if (err) throw err;
+            res.status(200).json(result);
+         });
+```
 You can view live site <a href="https://react-task-manager-0.herokuapp.com/" target="_blank">here</a>
