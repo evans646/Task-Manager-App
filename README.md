@@ -17,7 +17,7 @@ Simple full stack task manager Application to manager tedious tasks
  And stored Tasks using <b>MySQL Database Management System</b>
 
 This project explores Redux and its  ecosystems(<em>Redux-thunks</em>, <em>Redux reselect</em>) to manage the state of the Api requests to the backend
- as well as to accomplish the <b>CREATE</b>,<b>READ</b>, <b>UPDATE</b>, <b>DELETE</b> Functionalities using MYSQL Databse 
+ as well as to accomplish the <b>CREATE</b>,<b>READ</b>, <b>UPDATE</b>, <b>DELETE</b> Functionalities using MYSQL Database 
  Management system. I used styled components to style the App without the need to use traditional CSS. 
 </p>
 <hr/>
