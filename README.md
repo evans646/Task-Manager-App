@@ -1,5 +1,5 @@
 # Task-Manager-App
-Simple full stack task manager Application to manager tedious tasks
+Simple full stack task manager Application to manage tedious tasks
 <p>
     This project was created using 
 </p>
