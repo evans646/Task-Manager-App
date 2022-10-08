@@ -11,15 +11,15 @@ export const createTaskRoute = {
     method: 'post',
     handler: (req, res) => {
          const { text } = req.body;
-         if (text) {
+            if (text) {
             const insertedTask = { 
                 id: uid(),
                 isCompleted: false,
                 createdAt:'now()',
                 text}
          let SQL = `INSERT INTO tasks (id, text, isCompleted,createdAt)
-         VALUES (${insertedTask.id},${insertedTask.text},${insertedTask.isCompleted},${insertedTask.createdAt});`;
-        db.query(SQL, function (err, result) {
+             VALUES (${insertedTask.id},${insertedTask.text},${insertedTask.isCompleted},${insertedTask.createdAt});`;
+         db.query(SQL, function (err, result) {
             if (err) throw err;
             res.status(200).json(result); 
           });
