@@ -18,7 +18,7 @@ export const createTaskRoute = {
                 createdAt:'now()',
                 text}
          let SQL = `INSERT INTO tasks (id, text, isCompleted,createdAt)
-             VALUES (${insertedTask.id},${insertedTask.text},${insertedTask.isCompleted},${insertedTask.createdAt});`;
+             VALUES (${insertedTask.id},'${insertedTask.text}',${insertedTask.isCompleted},${insertedTask.createdAt});`;
          db.query(SQL, function (err, result) {
             if (err) throw err;
             res.status(200).json(result); 
